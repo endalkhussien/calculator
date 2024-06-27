@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Project</title>
+</head>
+<body>
+    <div class="title">Great Learning Calculator</div>
+    <table border="0"   >
+        <tr>
+            <td colspan="3"><input type="text" class="display" id="display"></td>
+            <td><input type="button" value="c" onclick="clearDisplay()"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="appendTodisplay('1')"></td>
+            <td><input type="button" value="2" onclick="appendTodisplay('2')"></td>
+            <td><input type="button" value="3" onclick="appendTodisplay('3')"></td>
+            <td><input type="button" value="/" onclick="appendTodisplay('/')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="appendTodisplay('4')"></td>
+            <td><input type="button" value="5" onclick="appendTodisplay('5')"></td>
+            <td><input type="button" value="6" onclick="appendTodisplay('6')"></td>
+            <td><input type="button" value="-" onclick="appendTodisplay('-')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="appendTodisplay('7')"></td>
+            <td><input type="button" value="8" onclick="appendTodisplay('8')"></td>
+            <td><input type="button" value="9" onclick="appendTodisplay('9')"></td>
+            <td><input type="button" value="+" onclick="appendTodisplay('+')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value=". " onclick="appendTodisplay('.')"></td>
+            <td><input type="button" value="0" onclick="appendTodisplay('0')"></td>
+            <td><input type="button" value="=" onclick="equate()"></td>
+            <td><input type="button" value="*" onclick="appendTodisplay('*')"></td>
+        </tr>
+    </table>
+    <script type="text/javascript"> 
+      let textField = document.getElementById('textField');
+       function clearDisplay(){
+            display.value = '';
+        } 
+        function appendTodisplay (value) {
+            display.value += value;
+        }
+        function equate (value) {
+            try {
+                display.value = eval(display.value);
+            } catch(e) {
+                display.value = 'Error';
+            }
+        }
+    </script>
+    
+</body>
+</html>
